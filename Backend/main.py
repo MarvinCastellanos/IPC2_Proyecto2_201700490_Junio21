@@ -67,6 +67,7 @@ def leeXML():
                 fechaPrimerCompra=cliente.find('fechaPrimeraCompra').text
                 print(nombre)
                 listaCliente.agrega(cliente(nombre,apellido,edad,cumpleanos,fechaPrimerCompra))
+                continue
         #ASIGNACION DE DATOS A LISTA MEJORES CLIENTES
         elif child.tag=='mejoresClientes':
             for mejorCliente in child:
@@ -76,6 +77,7 @@ def leeXML():
                 cantidadGastada=mejorCliente.find('cantidadGastada').text
                 
                 listaMejorCliente.agrega(mejorCliente('name','fechaUltimaCompra','cantidadComprada','cantidadGastada'))
+                continue
         #ASIGNACION DE DATOS A LISTA JUEGOS
         elif child.tag=='juegos':
             for juego in child:
@@ -86,6 +88,7 @@ def leeXML():
                 stock=juego.find('stock').text
                 print(nombre)
                 listaCliente.agrega(juego(nombre,plataforma,anoLanzamiento,clasificacion,stock))
+                continue
         #ASIGNACION DE DATOS A LISTA JUEGOS MAS VENDIDOS
         elif child.tag=='juegosMasVendidos':
             for juegoMasVendido in child:
@@ -95,6 +98,7 @@ def leeXML():
                 stock=juegoMasVendido.find('stock').text
                 print(nombre)
                 listaCliente.agrega(juegoMasVendido(nombre,fechaUltimaCompra,copiasVendidas,clasificacion,stock))
+                continue
     #print('lista cliente: '+str(len(listaCliente)))
     return ''
 
